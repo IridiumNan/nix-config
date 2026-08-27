@@ -5,6 +5,7 @@
 
   services.hypridle.enable = true;
 
+
   environment.systemPackages = with pkgs; [
     hyprlauncher
     hyprpaper
@@ -22,7 +23,6 @@
     grim
     slurp
     satty
-
 
   ];
 }

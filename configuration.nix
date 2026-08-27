@@ -102,7 +102,9 @@
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
+    wireplumber.enable = true;
   };
+  security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -221,9 +223,10 @@
                                 allowedUDPPorts = [ 53 67 ];
                             };
                     };
+                    # 5900 for wayvnc
                     # 53317 for localsend_app
                     # 7890 for local clash proxy lan enable
-                allowedTCPPorts = [ 7890 7891 53317 ];
+                allowedTCPPorts = [ 5900 7890 7891 53317 ];
                 allowedUDPPorts = [ 7890 7891 ];
             };
         nat = {
