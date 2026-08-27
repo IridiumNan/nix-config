@@ -206,10 +206,27 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 53317 ];
+  # networking.firewall.allowedTCPPorts = [ 53317 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  networking = {
+        firewall = {
+                enable = true;
+                interfaces = {
+                        virbr0 = {
+                                allowedUDPPorts = [ 53 67 ];
+                            };
+                    };
+                allowedTCPPorts = [ 7890 7891 53317 ];
+                allowedUDPPorts = [ 7890 7891 ];
+            };
+    nat = {
+            enable = true;
+            internalInterfaces = [ "virbr0" ];
+        };
+    };
 
   home-manager = {
         extraSpecialArgs = { inherit inputs; };
