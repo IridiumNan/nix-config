@@ -68,6 +68,15 @@
     powerOnBoot = true;
   };
   services.blueman.enable = true;
+
+  # tlp service
+  services.tlp = {
+    enable = true;
+    settings = {
+    START_CHARGE_THRESH_BAT0 = 80;
+    STOP_CHARGE_THRESH_BAT0 = 85;
+    };
+  };
   
 
   # Configure keymap in X11
@@ -134,6 +143,7 @@
     kitty
     nodejs
     pavucontrol
+    socat
 
     # utils
     curl
@@ -156,6 +166,7 @@
     hunspell
     # hunspellDicts.zh_CN
     # hunspellDicts.en_US
+    localsend
 
     gcc
     go
@@ -185,7 +196,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
