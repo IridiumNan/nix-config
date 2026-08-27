@@ -35,19 +35,6 @@
   };
 
 
-  networking.hostName = "nixos-thinkpad"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
-
-  # Configure network proxy if necessary
-  networking.proxy.default = "http://127.0.0.1:7890/";
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
@@ -83,21 +70,21 @@
   # services.xserver.enable = true;
 
 
-  # bluetooth
-  hardware.bluetooth = {
+# bluetooth
+    hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  };
-  services.blueman.enable = true;
+    };
+    services.blueman.enable = true;
 
-  # tlp service
-  services.tlp = {
+# tlp charge thresh
+    services.tlp = {
     enable = true;
     settings = {
-    START_CHARGE_THRESH_BAT0 = 80;
-    STOP_CHARGE_THRESH_BAT0 = 85;
+            START_CHARGE_THRESH_BAT0 = 80;
+            STOP_CHARGE_THRESH_BAT0 = 85;
+        };
     };
-  };
   
 
   # Configure keymap in X11
@@ -211,21 +198,38 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+
+  # Set your time zone.
+  time.timeZone = "Asia/Shanghai";
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
   networking = {
+        hostName = "nixos-thinkpad";
+        networkmanager.enable = true;
+        proxy = {
+                default = "http://127.0.0.1:7890/";
+                noProxy = "127.0.0.1,localhost,internal.domain";
+            };
         firewall = {
                 enable = true;
                 interfaces = {
+                        # for default virt-manager network dns port
                         virbr0 = {
                                 allowedUDPPorts = [ 53 67 ];
                             };
                     };
+                    # 53317 for localsend_app
+                    # 7890 for local clash proxy lan enable
                 allowedTCPPorts = [ 7890 7891 53317 ];
                 allowedUDPPorts = [ 7890 7891 ];
             };
-    nat = {
-            enable = true;
-            internalInterfaces = [ "virbr0" ];
-        };
+        nat = {
+                enable = true;
+                internalInterfaces = [ "virbr0" ];
+            };
     };
 
   home-manager = {
@@ -235,6 +239,7 @@
             };
     };
 
+  # allow non free frimware
   nixpkgs.config.allowUnfree = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
