@@ -8,11 +8,31 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./hyprland.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = false;
+  # boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = false;
+      extraEntries = ''
+    menuentry "Arch Linux" --class arch {
+        insmod part_gpt
+        insmod fat
+        search --no-floppy --fs-uuid --set=root 565C-4978
+        linux  /vmlinuz-linux root=UUID=74240546-29a9-4fdb-8807-24cfcd4b406b rw quiet
+        initrd /initramfs-linux.img
+    }'';
+    };
+  };
+
 
   networking.hostName = "nixos-thinkpad"; # Define your hostname.
 
@@ -96,8 +116,6 @@
     alsa.support32Bit = true;
   };
 
-  services.hypridle.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -120,8 +138,18 @@
   # tailscale
   services.tailscale.enable = true;
 
-  # config the hyprland
-  programs.hyprland.enable = true;
+  # theme and icon
+  programs.dconf.profiles.user.databases = [
+    {
+      settings."org/gnome/desktop/interface" = {
+          gtk-theme = "Adwaita";
+          icon-theme = "Flat-Remix-Red-Dark";
+          font-name = "Noto Sans Medium 11";
+          document-font-name = "Noto Sans Medium 11";
+          monospace-font-name = "Noto Sans Mono Medium 11";
+      };
+    }
+  ];
 
   # keyd
   services.keyd.enable = true;
@@ -131,16 +159,9 @@
   environment.systemPackages = with pkgs; [
     # need for system
     keyd
-    nautilus
-    hyprlauncher
-    hyprpaper
-    hypridle
-    hyprlock
-    hyprsunset
     vim
     neovim
     git
-    kitty
     nodejs
     pavucontrol
     socat
@@ -167,7 +188,8 @@
     # hunspellDicts.zh_CN
     # hunspellDicts.en_US
     localsend
-
+    lm_sensors
+    
     gcc
     go
     python3
@@ -193,10 +215,10 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 53317 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
