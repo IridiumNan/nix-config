@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./hyprland.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -134,6 +135,11 @@
   programs.firefox.enable = true;
   programs.zsh.enable = true;
 
+# virt-manager
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "cai" ];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # tailscale
   services.tailscale.enable = true;
@@ -159,6 +165,8 @@
   environment.systemPackages = with pkgs; [
     # need for system
     keyd
+    curl
+    wget
     vim
     neovim
     git
@@ -166,28 +174,11 @@
     pavucontrol
     socat
 
-    # utils
-    curl
-    wget
-    htop
-    fastfetch
-    zoxide
-    fzf
-    tmux
-    fd
-    marktext
     unzip
     zip
     xz
     tailscale
     tlp
-    helix
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    libreoffice-qt
-    hunspell
-    # hunspellDicts.zh_CN
-    # hunspellDicts.en_US
-    localsend
     lm_sensors
     
     gcc
@@ -219,6 +210,15 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  home-manager = {
+        extraSpecialArgs = { inherit inputs; };
+        users = {
+                "cai" = import ./home.nix;
+            };
+    };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
