@@ -1,7 +1,10 @@
 {
-  description = "Nixos config flake";
+  description = "A NIXOS configuration";
 
   inputs = {
+    # nixvim.url = "github:IridiumNan/nixvim";
+    nixvim.url = "git+file:///home/cai/nixvim/";
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -9,7 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # zen-browser third-party flake input
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 

@@ -41,7 +41,6 @@
     ripgrep
     tmux
 
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     marktext
     helix
     libreoffice-qt
@@ -84,6 +83,7 @@
 
   # theme and pointer
   home.pointerCursor = {
+  	enable = true;
         gtk.enable = true;
 
         package = pkgs.apple-cursor;

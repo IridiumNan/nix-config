@@ -154,7 +154,6 @@
     curl
     wget
     vim
-    neovim
     git
     nodejs
     pavucontrol
@@ -176,6 +175,9 @@
     nerd-fonts.jetbrains-mono
 
     gnome-connections
+
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
