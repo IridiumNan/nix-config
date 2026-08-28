@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -78,13 +78,16 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "apple_cursor"
+           ];
 
   # theme and pointer
   home.pointerCursor = {
         gtk.enable = true;
 
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Classic";
+        package = pkgs.apple-cursor;
+        name = "macOS";
         size = 16;
     };
 
@@ -115,6 +118,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
     EDITOR = "nvim";
+    XCURSOR_THEME = "macOS";
   };
 
   # Let Home Manager install and manage itself.
