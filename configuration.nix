@@ -177,6 +177,8 @@
     noto-fonts
     noto-fonts-color-emoji
     nerd-fonts.jetbrains-mono
+
+    gnome-connections
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
