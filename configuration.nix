@@ -109,6 +109,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cai = {
     isNormalUser = true;
@@ -119,10 +120,6 @@
     shell = pkgs.zsh;
     home = "/home/cai";
   };
-
-
-  programs.firefox.enable = true;
-  programs.zsh.enable = true;
 
 # virt-manager
   programs.virt-manager.enable = true;

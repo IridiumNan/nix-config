@@ -79,6 +79,23 @@
     # '';
   };
 
+  # theme and pointer
+  home.pointerCursor = {
+        gtk.enable = true;
+
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 16;
+    };
+
+    gtk = {
+        enable = true;
+            iconTheme = {
+                package = pkgs.adwaita-icon-theme;
+                name = "Adwaita";
+                };
+        };
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
