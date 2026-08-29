@@ -3,8 +3,8 @@
 {
   programs.hyprland.enable = true;
 
-  services.hypridle.enable = true;
 
+  services.hypridle.enable = true;
 
   environment.systemPackages = with pkgs; [
     hyprlauncher

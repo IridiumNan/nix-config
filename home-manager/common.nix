@@ -1,0 +1,38 @@
+{ lib, pkgs, ... }:
+{
+
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
+  home.username = "cai";
+  home.homeDirectory = "/home/cai";
+
+  # This value determines the Home Manager release that your configuration is
+  # compatible with. This helps avoid breakage when a new Home Manager release
+  # introduces backwards incompatible changes.
+  #
+  # You should not change this value, even if you update Home Manager. If you do
+  # want to update the value, then make sure to first check the Home Manager
+  # release notes.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "apple_cursor"
+           ];
+  # theme and pointer
+  home.pointerCursor = {
+  	enable = true;
+        gtk.enable = true;
+
+        package = pkgs.apple-cursor;
+        name = "macOS";
+        size = 16;
+    };
+
+    gtk = {
+        enable = true;
+            iconTheme = {
+                package = pkgs.adwaita-icon-theme;
+                name = "Adwaita";
+                };
+        };
+}
