@@ -2,7 +2,8 @@
   description = "A NIXOS configuration";
 
   inputs = {
-    # nixvim.url = "github:IridiumNan/nixvim";
+    #nixvim.url = "github:IridiumNan/nixvim";
+
     nixvim.url = "git+file:///home/cai/nixvim/";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -25,9 +26,6 @@
 
       modules = [
         ./configuration.nix
-        ./hardware-configuration.nix
-        ./hyprland.nix
-        inputs.home-manager.nixosModules.default
       ];
     };
   };
