@@ -23,5 +23,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
 }

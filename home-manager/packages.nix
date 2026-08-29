@@ -5,6 +5,7 @@
     # # "Hello, world!" when run.
     # hello
 
+    wl-clipboard
     htop
     fastfetch
     zoxide
