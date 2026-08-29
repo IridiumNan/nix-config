@@ -4,7 +4,7 @@
   inputs = {
     #nixvim.url = "github:IridiumNan/nixvim";
 
-    nixvim.url = "git+file:///home/cai/nixvim/";
+    nixvim.url = "git+file:///home/cai/nix-repo/nixvim/";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 

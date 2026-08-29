@@ -15,6 +15,7 @@
       ./system/user.nix
       ./system/virt-machine.nix
       ./system/network.nix
+      ./system/nfs.nix
 
       ./common.nix
       ./hyprland.nix

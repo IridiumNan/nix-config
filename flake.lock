@@ -230,11 +230,11 @@
         "rev": "ee79f767a1665c77dd876e2c0a6d31db6e5e047a",
         "revCount": 215,
         "type": "git",
-        "url": "file:///home/cai/nixvim/"
+        "url": "file:///home/cai/nix-repo/nixvim/"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/cai/nixvim/"
+        "url": "file:///home/cai/nix-repo/nixvim/"
       }
     },
     "nixvim_2": {
