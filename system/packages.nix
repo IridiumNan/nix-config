@@ -28,7 +28,7 @@
     noto-fonts-color-emoji
     nerd-fonts.jetbrains-mono
 
-    gnome-connections
+    freerdp
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.core
