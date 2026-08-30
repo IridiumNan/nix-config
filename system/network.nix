@@ -15,7 +15,11 @@
                                 allowedUDPPorts = [ 53 67 ];
                             };
 			wlp0s20f3 = {
-                		allowedTCPPorts = [ 5900 5901 7890 7891 53317 ];
+                                                # 5901 for wayvnc
+                                                # 7890 7891 for clash
+                                                # 53317 for localsend
+                                                # 8080 opened for test
+                		allowedTCPPorts = [ 5900 5901 7890 7891 8080 53317 ];
                 		allowedUDPPorts = [ 7890 7891 ];
 			};
                     };
