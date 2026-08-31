@@ -14,8 +14,8 @@
     ripgrep
     tmux
 
+    pandoc
     marktext
-    helix
     libreoffice-qt
     hunspell
 
