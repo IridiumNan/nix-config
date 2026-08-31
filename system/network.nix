@@ -11,8 +11,10 @@
                 interfaces =
 		{
                         # for default virt-manager network dns port
+                        # 7890 and 7891 for proxy
                         virbr0 = {
-                                allowedUDPPorts = [ 53 67 ];
+                                allowedTCPPorts = [ 7890 7891 ];
+                                allowedUDPPorts = [ 53 67 7890 7891 ];
                             };
 			wlp0s20f3 = {
                                                 # 5901 for wayvnc
