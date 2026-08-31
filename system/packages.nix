@@ -30,7 +30,14 @@
 
     freerdp
 
+    # For IOS mount
+    libimobiledevice
+    ifuse
+
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.core
+
+    # dotfile manager
+    chezmoi
   ];
 }

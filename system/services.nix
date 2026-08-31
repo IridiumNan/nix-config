@@ -1,3 +1,4 @@
+{ pkgs, ...}:
 {
   # tlp charge thresh
   services.tlp = {
@@ -31,4 +32,10 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # IOS auto mount
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 }
