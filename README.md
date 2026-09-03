@@ -30,6 +30,6 @@
 
 ## NOTE
 
-- **Check system/nfs.nix when before you build system** (unless you will blocked for nfs waiting)
+- **Check system/nfs.nix when before you build system**
 - disable virt-machine when you don't need it
 - **Bootloader contains the arch OS, If you don't need it. Just adjust**
