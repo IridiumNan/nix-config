@@ -24,5 +24,11 @@
     slurp
     satty
 
+    # clipboard
+    wl-clipboard
+
+    # brightness control utils
+
+    brightnessctl
   ];
 }

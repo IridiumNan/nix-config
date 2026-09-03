@@ -15,24 +15,4 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-             "apple_cursor"
-           ];
-  # theme and pointer
-  home.pointerCursor = {
-  	enable = true;
-        gtk.enable = true;
-
-        package = pkgs.apple-cursor;
-        name = "macOS";
-        size = 16;
-    };
-
-    gtk = {
-        enable = true;
-            iconTheme = {
-                package = pkgs.adwaita-icon-theme;
-                name = "Adwaita";
-                };
-        };
 }
