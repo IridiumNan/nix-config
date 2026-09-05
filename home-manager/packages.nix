@@ -18,7 +18,6 @@
     libreoffice-qt
     hunspell
 
-    localsend
     wayvnc
 
     # # It is sometimes useful to fine-tune packages, for example, by applying

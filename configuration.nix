@@ -7,15 +7,15 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./system/hardware-configuration.nix
-      ./system/bootloader.nix
+      # ./system/hardware-configuration.nix
+      # ./system/bootloader.nix
       ./system/services.nix
       ./system/keyboard.nix
       ./system/packages.nix
       ./system/user.nix
-      ./system/virt-machine.nix
+      # ./system/virt-machine.nix
       ./system/network.nix
-      ./system/nfs.nix
+      # ./system/nfs.nix
 
       ./common.nix
       ./hyprland.nix

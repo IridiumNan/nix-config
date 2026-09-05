@@ -9,8 +9,6 @@
   environment.systemPackages = with pkgs; [
     hyprlauncher
     hyprpaper
-    hypridle
-    hyprlock
     hyprsunset
 
     # file browser
