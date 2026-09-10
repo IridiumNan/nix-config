@@ -12,6 +12,7 @@
     nodejs
     pavucontrol
     socat
+    busybox
 
     unzip
     zip
