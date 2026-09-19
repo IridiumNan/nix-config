@@ -4,6 +4,7 @@
     ./home-manager/common.nix
     ./home-manager/programs.nix
     ./home-manager/variables.nix
+    ./home-manager/appearance.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your

@@ -20,6 +20,7 @@
     tailscale
     tlp
     lm_sensors
+    vlc
 
     gcc
     python3
