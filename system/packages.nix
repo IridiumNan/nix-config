@@ -25,6 +25,9 @@
     gcc
     python3
 
+    # bluetooth tui manager
+    bluetui
+
     # Essential standard fonts
     noto-fonts
     noto-fonts-color-emoji
