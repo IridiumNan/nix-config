@@ -224,17 +224,17 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1787977532,
-        "narHash": "sha256-MvcYmrKGalH+dallC1JoZT/KI9TY6GMvn6rQxc3WSbc=",
-        "ref": "refs/heads/main",
-        "rev": "ee79f767a1665c77dd876e2c0a6d31db6e5e047a",
-        "revCount": 215,
-        "type": "git",
-        "url": "file:///home/cai/nix-repo/nixvim/"
+        "lastModified": 1791111677,
+        "narHash": "sha256-sDmQM/DJxPhECMhD20Q3msS80q/YA1Bn00Ob4AG2qUE=",
+        "owner": "IridiumNan",
+        "repo": "nixvim",
+        "rev": "0e8aba3467aee07a4823ebb47fe3450b1fa6ab71",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/cai/nix-repo/nixvim/"
+        "owner": "IridiumNan",
+        "repo": "nixvim",
+        "type": "github"
       }
     },
     "nixvim_2": {
