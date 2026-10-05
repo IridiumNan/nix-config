@@ -22,7 +22,8 @@
     wayvnc
 
     # epub reader
-    thorium-reader
+    # thorium-reader This has been deprecated
+    foliate
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
