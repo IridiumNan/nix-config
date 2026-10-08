@@ -1,8 +1,10 @@
+{ pkgs ,... }:
 {
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
   # boot.loader.efi.canTouchEfiVariables = true;
 
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {

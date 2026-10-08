@@ -28,6 +28,19 @@
     └── virt-machine.nix
 ```
 
+## Kernel Upgrade
+
+- Uncomment the `system/bootloader` line 7:
+```nix
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+```
+
+- rebuild system and switch after reboot
+
+```bash
+sudo nixos-rebuild boot --flake . --print-build-logs --upgrade
+```
+
 ## NOTE
 
 - **Check system/nfs.nix when before you build system**
