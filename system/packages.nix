@@ -44,5 +44,8 @@
 
     # dotfile manager
     chezmoi
+
+    # distrobox
+    pkgs.distrobox
   ];
 }
