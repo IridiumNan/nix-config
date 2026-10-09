@@ -41,6 +41,14 @@
 sudo nixos-rebuild boot --flake . --print-build-logs --upgrade
 ```
 
+## FileSystem
+
+- partition for `/` should be labeled as `NIXROOT`
+- partition for `/boot` should be labeled as `NIXBOOT`
+- partition for `/swap` should be labeled as `SWAP`
+
+If you want to modify the configuration, see `system/hardware-configuration.nix`
+
 ## NOTE
 
 - **Check system/nfs.nix when before you build system**
