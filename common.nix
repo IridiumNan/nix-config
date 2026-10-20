@@ -5,8 +5,6 @@
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # allow non free frimware
-  nixpkgs.config.allowUnfree = true;
 
   home-manager = {
         extraSpecialArgs = { inherit inputs; };
