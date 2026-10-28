@@ -38,9 +38,4 @@
     enable = true;
     package = pkgs.usbmuxd2;
   };
-  systemd.services.nix-daemon.environment = {
-    http_proxy = "http://127.0.0.1:7890";
-    https_proxy = "http://127.0.0.1:7890";
-
-  };
 }

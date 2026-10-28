@@ -10,6 +10,11 @@
                 };
             # default action for pull is merge
             pull.rebase = false;
+
+# proxy
+            http.proxy = "http://127.0.0.1:7890";
+            https.proxy = "http://127.0.0.1:7890";
+
             };
     };
 }

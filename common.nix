@@ -32,10 +32,15 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
   nix.settings = {
+    max-jobs = 2;
+    cores = 4;
+    connect-timeout = 10;
   # Prioritize fast mirrors over default cache
   substituters = lib.mkBefore [
+    "https://mirror.sjtu.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    "https://cache.nixos.org"
   ];
   # Necessary for some systems to allow custom substituters
   trusted-users = [ "root" "@wheel" ];
