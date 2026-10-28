@@ -36,11 +36,15 @@
     cores = 4;
     connect-timeout = 10;
   # Prioritize fast mirrors over default cache
-  substituters = lib.mkBefore [
+  substituters = [
     "https://mirror.sjtu.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-    "https://cache.nixos.org"
+  ];
+  trusted-substituters = [
+    "https://mirror.sjtu.edu.cn/nix-channels/store"
+    "https://mirrors.ustc.edu.cn/nix-channels/store"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
   ];
   # Necessary for some systems to allow custom substituters
   trusted-users = [ "root" "@wheel" ];

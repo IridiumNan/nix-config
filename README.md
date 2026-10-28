@@ -31,6 +31,7 @@
 ## Kernel Upgrade
 
 - Uncomment the `system/bootloader` line 7:
+
 ```nix
     boot.kernelPackages = pkgs.linuxPackages_latest;
 ```
@@ -54,3 +55,20 @@ If you want to modify the configuration, see `system/hardware-configuration.nix`
 - **Check system/nfs.nix when before you build system**
 - disable virt-machine when you don't need it
 - **Bootloader contains the arch OS, If you don't need it. Just adjust**
+
+> [!NOTE]
+> If you use the `--build-host` option
+> You must config the remote server with substituters
+
+- Add to `/etc/nix/nix.conf`
+
+```init
+substituters = https://mirror.sjtu.edu.cn/nix-channels/store https://mirrors.ustc.edu.cn/nix-channels/store https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://cache.nixos.org/
+trusted-substituters = https://mirror.sjtu.edu.cn/nix-channels/store https://mirrors.ustc.edu.cn/nix-channels/store https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://cache.nixos.org/
+```
+
+Then restart `nix-daemon`
+
+```sh
+sudo systemctl restart nix-daemon
+```
