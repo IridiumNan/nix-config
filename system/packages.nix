@@ -8,10 +8,13 @@
     curl
     wget
     vim
+    # use original nvim
+    neovim
     git
     nodejs
     pavucontrol
     socat
+    nethogs
     busybox
 
     unzip
@@ -42,7 +45,6 @@
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     # forbid the nixvim for faster rebuild
     # inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.core
-
     # dotfile manager
     chezmoi
 
