@@ -5,7 +5,7 @@
   # boot.loader.efi.canTouchEfiVariables = true;
 
 # Use the latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_7_2;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {

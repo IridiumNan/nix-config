@@ -40,7 +40,8 @@
     ifuse
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.core
+    # forbid the nixvim for faster rebuild
+    # inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.core
 
     # dotfile manager
     chezmoi
