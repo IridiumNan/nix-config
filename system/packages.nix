@@ -46,6 +46,6 @@
     chezmoi
 
     # distrobox
-    pkgs.distrobox
+    distrobox
   ];
 }
