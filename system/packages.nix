@@ -50,5 +50,7 @@
 
     # distrobox
     distrobox
+
+    obs-studio
   ];
 }
