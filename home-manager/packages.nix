@@ -19,7 +19,6 @@
 
     wpsoffice-cn
 
-    localsend
     wayvnc
 
     # packettracer
@@ -42,4 +41,8 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+    services.kdeconnect = {
+        enable = true;
+        package = pkgs.kdePackages.kdeconnect-kde; 
+    };
 }
