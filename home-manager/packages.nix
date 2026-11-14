@@ -22,6 +22,9 @@
     localsend
     wayvnc
 
+    # packettracer
+    cisco-packet-tracer_9
+
     # epub reader
     # thorium-reader This has been deprecated
     foliate
