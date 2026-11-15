@@ -15,6 +15,7 @@
     pavucontrol
     socat
     nethogs
+    tcpdump
     busybox
 
     unzip
