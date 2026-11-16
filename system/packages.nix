@@ -17,6 +17,7 @@
     nethogs
     tcpdump
     busybox
+    alsa-utils
 
     unzip
     zip
