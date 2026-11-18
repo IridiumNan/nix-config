@@ -40,6 +40,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # flash card manager
+    anki
   ];
     services.kdeconnect = {
         enable = true;
