@@ -18,6 +18,9 @@
     tcpdump
     busybox
     alsa-utils
+    # ftp client
+    filezilla 
+    inetutils
 
     unzip
     zip
