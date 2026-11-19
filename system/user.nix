@@ -4,6 +4,7 @@
     programs.zsh.enable = true;
 
     programs.kdeconnect.enable = true;
+    programs.wireshark.enable = true;
     # programs.localsend = {
     #     enable = true;
     # };
@@ -13,6 +14,7 @@
         extraGroups = [
             "wheel" # Enable ‘sudo’ for the user.
             "input" # For Input device monitor (read keyboard)
+            "wireshark"
         ];
         packages = with pkgs; [
             tree

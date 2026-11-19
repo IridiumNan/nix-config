@@ -57,5 +57,7 @@
     distrobox
 
     obs-studio
+
+    wireshark
   ];
 }
